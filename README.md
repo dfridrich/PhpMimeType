@@ -1,4 +1,5 @@
-# PhpMimeType
+PhpMimeType [![Build Status](https://travis-ci.org/dfridrich/PhpMimeType.svg)](https://travis-ci.org/dfridrich/PhpMimeType)
+===
 
 Simple class for guessing PHP Mime Type based on file extension.
 
