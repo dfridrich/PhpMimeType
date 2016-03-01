@@ -70,7 +70,11 @@ class MimeType
     public static function get($filename)
     {
         $pathInfo = pathinfo($filename);
-        $extension = strtolower($pathInfo['extension']);
+        if(array_key_exists("extension", $pathInfo)){
+          $extension = strtolower($pathInfo['extension']);
+        }else{
+          return 'application/octet-stream';
+        }
 
         if (array_key_exists($extension, self::$mimeTypes)) {
             return self::$mimeTypes[$extension];
