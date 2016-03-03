@@ -10,5 +10,6 @@ class MimeTypeTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('application/octet-stream', MimeType::get('video.avi'));
         $this->assertEquals('image/jpeg', MimeType::get('picture.jpg'));
         $this->assertEquals('application/octet-stream', MimeType::get('some.strangeExtension'));
+        $this->assertEquals('application/octet-stream', MimeType::get('fileWithoutExtension'));
     }
 }
