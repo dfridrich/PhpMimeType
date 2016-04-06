@@ -106,6 +106,7 @@ $ composer test
 - [Dennis Fridrich](https://github.com/dfridrich)
 - Nick Shek
 - [Giso Stallenberg](https://github.com/gisostallenberg)
+
 - Photo by [freepik.com](http://www.freepik.com)
 - Inspiration from [svogal](http://php.net/manual/en/function.mime-content-type.php#87856)
 
