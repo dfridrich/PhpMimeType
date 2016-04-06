@@ -27,8 +27,8 @@ echo \Defr\PhpMimeType\MimeType::get('index.php'); // outputs text/html
 // from SplFileInfo
 echo \Defr\PhpMimeType\MimeType::get(new \SplFileInfo('Video.avi')); // outputs text/html
 
-// from SplFileObject, outputs image/jpeg
-echo \Defr\PhpMimeType\MimeType::get(new \SplFileObject('Image.JPEG'));
+// from SplFileObject
+echo \Defr\PhpMimeType\MimeType::get(new \SplFileObject('Image.JPEG')); // outputs image/jpeg
 
 // from string
 echo \Defr\PhpMimeType\MimeType::get('someStrange.extension'); // outputs application/octet-stream
