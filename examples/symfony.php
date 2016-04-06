@@ -6,9 +6,9 @@ require "../vendor/autoload.php";
 $response = \Defr\PhpMimeType\MimeType::response(__FILE__);
 $response->send();
 
-// or...
-$response = \Defr\PhpMimeType\FileAsResponse::get(__FILE__);
+// With own file name
+$response = \Defr\PhpMimeType\FileAsResponse::get(__FILE__, "inline", "my-own-filename.txt");
 $response->send();
 
-// or...
+// Directly send response to browser
 $response = \Defr\PhpMimeType\FileAsResponse::send(__FILE__);

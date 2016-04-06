@@ -40,6 +40,18 @@ class MimeTypeTest extends PHPUnit_Framework_TestCase
 
     public function testMimeTypeResponse()
     {
-        $this->assertInstanceOf('Symfony\\Component\\HttpFoundation\\Response', MimeType::response(new \SplFileObject(__FILE__)));
+        $this->assertInstanceOf(
+            'Symfony\\Component\\HttpFoundation\\Response',
+            MimeType::response(new \SplFileObject(__FILE__))
+        );
+    }
+
+    public function testMimeTypeResponseWithOwnFileName()
+    {
+        $randomFileName = time().".txt";
+        $this->assertContains(
+            $randomFileName,
+            (string)MimeType::response(new \SplFileObject(__FILE__), null, "$randomFileName")
+        );
     }
 }

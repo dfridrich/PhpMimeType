@@ -66,8 +66,8 @@ $response->send();
 $response = \Defr\PhpMimeType\MimeType::response(__FILE__, \Symfony\Component\HttpFoundation\ResponseHeaderBag::DISPOSITION_INLINE);
 $response->send();
 
-// You can use FileAsResponse object too
-$response = \Defr\PhpMimeType\FileAsResponse::get(__FILE__);
+// You can use FileAsResponse object too (and own file name)
+$response = \Defr\PhpMimeType\FileAsResponse::get(__FILE__, null, "my-own-file-name.txt");
 $response->send();
 
 // Or directly send it to browser
