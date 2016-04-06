@@ -4,17 +4,19 @@
 [![Total Downloads](https://poser.pugx.org/dfridrich/php-mime-type/downloads)](https://packagist.org/packages/dfridrich/php-mime-type) 
 [![License](https://poser.pugx.org/dfridrich/php-mime-type/license)](https://packagist.org/packages/dfridrich/php-mime-type)
 
-Simple class for guessing PHP Mime Type based on file extension.
+Simple PHP class for guessing file mime type based on file extension.
 
-Installation with [Composer](https://getcomposer.org/)
------------------------------------------------------
+## Install
+
+Via Composer
 
 ``` sh
-php composer require dfridrich/php-mime-type:v1.*
+$ composer require dfridrich/php-mime-type
 ```
 
-Usage
------
+
+
+## Usage
 
 ``` php
 // outputs text/html
@@ -26,3 +28,29 @@ echo \Defr\MimeType::get('Image.JPEG');
 // outputs application/octet-stream
 echo \Defr\MimeType::get('someStrange.extension');
 ```
+
+## Testing
+
+``` bash
+$ composer test
+```
+
+## Contributing
+
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a future version unintentionally.
+* Commit just the modifications.
+* Ensure your code is nicely formatted in the [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)
+  style and that all tests pass.
+* Send the pull request.
+* Check that the Travis CI build passed. If not, rinse and repeat.
+
+## Credits
+
+- [Dennis Fridrich](https://github.com/dfridrich)
+- Nick Shek
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
