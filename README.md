@@ -52,7 +52,10 @@ If you want to use Symfony response feature, install HTTP Foundation package too
 $ composer require symfony/http-foundation
 ```
 
-Example usage:
+Just pass the file name or SPL object to response method and you will get Symfony\Component\HttpFoundation\Response object.
+Disposiotion is attachment (Symfony\Component\HttpFoundation\ResponseHeaderBag::DISPOSITION_ATTACHMENT)
+by default, you can chage it to "inline" or pass 
+Symfony\Component\HttpFoundation\ResponseHeaderBag::DISPOSITION_INLINE.
 
 ``` php
 // Return response to download this file as attachment
