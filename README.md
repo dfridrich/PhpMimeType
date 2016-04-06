@@ -44,6 +44,8 @@ foreach ($mimeTypes as $mimeType) {
 
 ```
 
+See [more examples](examples/).
+
 ## Testing
 
 ``` bash

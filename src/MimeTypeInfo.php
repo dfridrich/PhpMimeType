@@ -71,5 +71,4 @@ class MimeTypeInfo
     {
         return $this->mimeType;
     }
-
 }

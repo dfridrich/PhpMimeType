@@ -9,5 +9,4 @@ namespace Defr;
  */
 class MimeTypeException extends \Exception
 {
-
 }
