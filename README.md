@@ -16,8 +16,6 @@ Via Composer
 $ composer require dfridrich/php-mime-type
 ```
 
-
-
 ## Usage
 
 ``` php
@@ -45,6 +43,7 @@ foreach ($mimeTypes as $mimeType) {
 ```
 
 See [more examples](examples/).
+API documentation can be found [here](http://dfridrich.github.io/PhpMimeType/).
 
 ## Testing
 
