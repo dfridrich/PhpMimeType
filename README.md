@@ -32,6 +32,16 @@ echo \Defr\MimeType::get(new \SplFileObject('Image.JPEG'));
 
 // from string
 echo \Defr\MimeType::get('someStrange.extension'); // outputs application/octet-stream
+
+// Multiple files
+$files = ['index.php', new \SplFileInfo('Video.avi'), new \SplFileObject('example.php')];
+/** @var \Defr\MimeTypeInfo[] $mimeTypes */
+$mimeTypes = \Defr\MimeType::multiple($files);
+
+foreach ($mimeTypes as $mimeType) {
+    echo sprintf('File "%s" is mime type "%s"', $mimeType->getFileName(), $mimeType->getMimeType()).'<br>';
+}
+
 ```
 
 ## Testing

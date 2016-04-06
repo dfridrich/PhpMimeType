@@ -93,4 +93,18 @@ class MimeType
 
         return self::MIME_TYPE_IF_UNKNOWN;
     }
+
+    /**
+     * @param array $files
+     * @return array|MimeTypeInfo[]
+     */
+    public static function multiple(array $files)
+    {
+        $out = [];
+        foreach ($files as $file) {
+            $out[] = new MimeTypeInfo($file, self::get($file));
+        }
+
+        return $out;
+    }
 }
