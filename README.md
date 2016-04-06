@@ -100,6 +100,7 @@ $ composer test
 
 - [Dennis Fridrich](https://github.com/dfridrich)
 - Nick Shek
+- [Giso Stallenberg](https://github.com/gisostallenberg)
 
 Photo by [freepik.com](http://www.freepik.com)
 
