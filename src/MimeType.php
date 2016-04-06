@@ -63,29 +63,34 @@ class MimeType
         'ods'  => 'application/vnd.oasis.opendocument.spreadsheet',
     ];
 
+    const MIME_TYPE_IF_UNKNOWN = 'application/octet-stream';
+
     /**
-     * @param string|\SplFileInfo|\SplFileInfo $filename
-     * @return string
+     * @param string|\SplFileInfo|\SplFileObject $file
+     * @return mixed|string
+     * @throws MimeTypeException
      */
-    public static function get($filename)
+    public static function get($file)
     {
-        $pathInfo = pathinfo($filename);
-        if (array_key_exists("extension", $pathInfo)) {
-            $extension = strtolower($pathInfo['extension']);
-        } else {
-            return 'application/octet-stream';
+        if (is_string($file)) {
+            $file = new \SplFileInfo($file);
         }
+
+        $extension = strtolower($file->getExtension());
+        $path = $file->getPath();
 
         if (array_key_exists($extension, self::$mimeTypes)) {
             return self::$mimeTypes[$extension];
-        } elseif (function_exists('finfo_open') && is_file($filename)) {
-            $finfo = finfo_open(FILEINFO_MIME);
-            $mimetype = finfo_file($finfo, $filename);
-            finfo_close($finfo);
-
-            return $mimetype;
-        } else {
-            return 'application/octet-stream';
         }
+
+        if (function_exists('finfo_open') && $file->isFile()) {
+            $fileInfo = finfo_open(FILEINFO_MIME);
+            $mimeType = finfo_file($fileInfo, $path);
+            finfo_close($fileInfo);
+
+            return $mimeType;
+        }
+
+        return self::MIME_TYPE_IF_UNKNOWN;
     }
 }

@@ -21,14 +21,17 @@ $ composer require dfridrich/php-mime-type
 ## Usage
 
 ``` php
-// outputs text/html
-echo \Defr\MimeType::get('index.php');
-// outputs application/octet-stream
-echo \Defr\MimeType::get('Video.avi');
-// outputs image/jpeg
-echo \Defr\MimeType::get('Image.JPEG');
-// outputs application/octet-stream
-echo \Defr\MimeType::get('someStrange.extension');
+// from string, can be used on non-existing files
+echo \Defr\MimeType::get('index.php'); // outputs text/html
+
+// from SplFileInfo
+echo \Defr\MimeType::get(new \SplFileInfo('Video.avi')); // outputs text/html
+
+// from SplFileObject, outputs image/jpeg
+echo \Defr\MimeType::get(new \SplFileObject('Image.JPEG'));
+
+// from string
+echo \Defr\MimeType::get('someStrange.extension'); // outputs application/octet-stream
 ```
 
 ## Testing
