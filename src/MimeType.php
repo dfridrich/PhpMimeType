@@ -82,8 +82,8 @@ class MimeType
         $extension = strtolower($file->getExtension());
         $path = $file->getPath();
 
-        if (array_key_exists($extension, self::$mimeTypes)) {
-            return self::$mimeTypes[$extension];
+        if (array_key_exists($extension, static::$mimeTypes)) {
+            return static::$mimeTypes[$extension];
         }
 
         if (function_exists('finfo_open') && $file->isFile()) {
@@ -94,7 +94,7 @@ class MimeType
             return $mimeType;
         }
 
-        return self::MIME_TYPE_IF_UNKNOWN;
+        return static::MIME_TYPE_IF_UNKNOWN;
     }
 
     /**
@@ -105,7 +105,7 @@ class MimeType
     {
         $out = [];
         foreach ($files as $file) {
-            $out[] = self::info($file);
+            $out[] = static::info($file);
         }
 
         return $out;
@@ -117,7 +117,7 @@ class MimeType
      */
     public static function info($file)
     {
-        return new MimeTypeInfo($file, self::get($file));
+        return new MimeTypeInfo($file, static::get($file));
     }
 
     /**
@@ -132,7 +132,7 @@ class MimeType
             throw new MimeTypeException('HttpFoundation component not found, install it.');
         }
 
-        $info = self::info($file);
+        $info = static::info($file);
         $spl = $info->getSplFileObject();
 
         $response = new Response($spl->fread($spl->getSize()));
