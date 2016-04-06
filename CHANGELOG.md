@@ -13,7 +13,7 @@
 - Defr\\MimeType class, use Defr\\PhpMimeType\\MimeType.
 
 ### Fixed
-- Files without extension can be passed to .
+- Files without extension can be passed too.
 
 ### Removed
 - Old namespace **Defr**.
