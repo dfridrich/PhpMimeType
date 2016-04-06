@@ -7,6 +7,7 @@
 - SplFileInfo and SplFileObject support.
 - Multiple files can be "PhpMimeTyped".
 - All classes moved to namespace **Defr\\PhpMimeType** instead of **Defr**.
+- Minimal PHP version is 5.6.
 
 ### Deprecated
 - Defr\\MimeType class, use Defr\\PhpMimeType\\MimeType.
