@@ -95,6 +95,7 @@ $ composer test
   style and that all tests pass.
 * Send the pull request.
 * Check that the Travis CI build passed. If not, rinse and repeat.
+* For communication with contributors you can use [Gitter](https://gitter.im/dfridrich/PhpMimeType).
 
 ## Credits
 
