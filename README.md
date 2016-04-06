@@ -6,7 +6,7 @@
 
 ![PhpMimeType](phpmimetype.png "PhpMimeType")
 
-Simple PHP class for guessing file mime type based on file extension.
+Simple PHP class for guessing file mime type based on file extension with ability to use in Symfony project.
 
 ## Install
 
