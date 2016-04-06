@@ -14,7 +14,7 @@ class MimeType
     /**
      * @var array
      */
-    static $mimeTypes = array(
+    public static $mimeTypes = [
         'txt'  => 'text/plain',
         'htm'  => 'text/html',
         'html' => 'text/html',
@@ -61,7 +61,7 @@ class MimeType
         // Open Office
         'odt'  => 'application/vnd.oasis.opendocument.text',
         'ods'  => 'application/vnd.oasis.opendocument.spreadsheet',
-    );
+    ];
 
     /**
      * @param $filename
@@ -70,10 +70,10 @@ class MimeType
     public static function get($filename)
     {
         $pathInfo = pathinfo($filename);
-        if(array_key_exists("extension", $pathInfo)){
-          $extension = strtolower($pathInfo['extension']);
-        }else{
-          return 'application/octet-stream';
+        if (array_key_exists("extension", $pathInfo)) {
+            $extension = strtolower($pathInfo['extension']);
+        } else {
+            return 'application/octet-stream';
         }
 
         if (array_key_exists($extension, self::$mimeTypes)) {
