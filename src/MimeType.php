@@ -80,13 +80,17 @@ class MimeType
         }
 
         $extension = strtolower($file->getExtension());
-        $path = $file->getPath();
+        if ($extension === '') {
+            return static::MIME_TYPE_IF_UNKNOWN;
+        }
 
         if (array_key_exists($extension, static::$mimeTypes)) {
             return static::$mimeTypes[$extension];
         }
 
         if (function_exists('finfo_open') && $file->isFile()) {
+            $path = $file->getPath();
+
             $fileInfo = finfo_open(FILEINFO_MIME);
             $mimeType = finfo_file($fileInfo, $path);
             finfo_close($fileInfo);
