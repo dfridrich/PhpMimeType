@@ -97,6 +97,7 @@ $ composer test
 * Send the pull request.
 * Check that the Travis CI build passed. If not, rinse and repeat.
 * For communication with contributors you can use [Gitter](https://gitter.im/dfridrich/PhpMimeType).
+* Use [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) like this ``` php-cs-fixer fix . --level=psr2 ```
 
 ## Credits
 
