@@ -19,6 +19,12 @@ Via Composer
 $ composer require dfridrich/php-mime-type
 ```
 
+You can use v2.0.0 alpha release
+
+``` sh
+$ composer require "dfridrich/php-mime-type:v2.0.0-alpha"
+```
+
 ## Usage
 
 ### Basic usage
