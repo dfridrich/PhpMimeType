@@ -103,12 +103,16 @@ $ composer test
 
 ## Credits
 
-- [Dennis Fridrich](https://github.com/dfridrich)
-- Nick Shek
-- [Giso Stallenberg](https://github.com/gisostallenberg)
+### Contributors
 
-- Photo by [freepik.com](http://www.freepik.com)
-- Inspiration from [svogal](http://php.net/manual/en/function.mime-content-type.php#87856)
+* [Dennis Fridrich](https://github.com/dfridrich)
+* Nick Shek
+* [Giso Stallenberg](https://github.com/gisostallenberg)
+
+### Thanks to...
+
+* [freepik.com](http://www.freepik.com) - it provided photo in logo
+* [svogal](http://php.net/manual/en/function.mime-content-type.php#87856) - this guy inspired me to create this library
 
 ## License
 
