@@ -14,7 +14,7 @@ class MimeType
     /**
      * @var array
      */
-    public static $mimeTypes = array(
+    public static $mimeTypes = [
         'txt'  => 'text/plain',
         'htm'  => 'text/html',
         'html' => 'text/html',
@@ -61,10 +61,10 @@ class MimeType
         // Open Office
         'odt'  => 'application/vnd.oasis.opendocument.text',
         'ods'  => 'application/vnd.oasis.opendocument.spreadsheet',
-    );
+    ];
 
     /**
-     * @param $filename
+     * @param string|\SplFileInfo|\SplFileInfo $filename
      * @return string
      */
     public static function get($filename)
