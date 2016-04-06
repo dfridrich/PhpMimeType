@@ -53,8 +53,8 @@ $ composer require symfony/http-foundation
 ```
 
 Just pass the file name or SPL object to response method and you will get Symfony\Component\HttpFoundation\Response object.
-Disposiotion is attachment (Symfony\Component\HttpFoundation\ResponseHeaderBag::DISPOSITION_ATTACHMENT)
-by default, you can chage it to "inline" or pass 
+Disposition is **attachment** (Symfony\Component\HttpFoundation\ResponseHeaderBag::DISPOSITION_ATTACHMENT)
+by default, you can chage it to **inline** or pass 
 Symfony\Component\HttpFoundation\ResponseHeaderBag::DISPOSITION_INLINE.
 
 ``` php
