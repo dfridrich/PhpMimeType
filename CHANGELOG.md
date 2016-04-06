@@ -22,7 +22,7 @@
 
 ## v1.0.1
 
-Now using Semver versioning.
+Now using Semver versioning (thanks to @gisostallenberg).
 
 ## v1.0
 
