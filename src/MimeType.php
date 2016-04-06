@@ -79,8 +79,8 @@ class MimeType
         $extension = strtolower($file->getExtension());
         $path = $file->getPath();
 
-        if (array_key_exists($extension, self::$mimeTypes)) {
-            return self::$mimeTypes[$extension];
+        if (array_key_exists($extension, static::$mimeTypes)) {
+            return static::$mimeTypes[$extension];
         }
 
         if (function_exists('finfo_open') && $file->isFile()) {
@@ -91,7 +91,7 @@ class MimeType
             return $mimeType;
         }
 
-        return self::MIME_TYPE_IF_UNKNOWN;
+        return static::MIME_TYPE_IF_UNKNOWN;
     }
 
     /**
@@ -102,7 +102,7 @@ class MimeType
     {
         $out = [];
         foreach ($files as $file) {
-            $out[] = new MimeTypeInfo($file, self::get($file));
+            $out[] = new MimeTypeInfo($file, static::get($file));
         }
 
         return $out;
