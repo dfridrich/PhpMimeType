@@ -43,6 +43,7 @@ foreach ($mimeTypes as $mimeType) {
 ```
 
 See [more examples](examples/).
+
 API documentation can be found [here](http://dfridrich.github.io/PhpMimeType/).
 
 ## Testing
