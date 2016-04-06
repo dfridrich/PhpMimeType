@@ -1,7 +1,7 @@
 {
   "name": "dfridrich/php-mime-type",
   "type": "library",
-  "description": "Simple class for guessing PHP Mime Type.",
+  "description": "Simple PHP class for guessing file mime type based on file extension.",
   "keywords": [
     "php",
     "mimetype"
