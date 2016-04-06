@@ -32,5 +32,4 @@ class FileAsResponse
     {
         return MimeType::response($file, $disposition)->send();
     }
-
 }

@@ -17,7 +17,7 @@ class MimeType
     /**
      * @var array
      */
-    static $mimeTypes = [
+    public static $mimeTypes = [
         'txt'  => 'text/plain',
         'htm'  => 'text/html',
         'html' => 'text/html',
