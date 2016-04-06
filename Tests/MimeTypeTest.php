@@ -1,6 +1,6 @@
 <?php
 
-use Defr\MimeType;
+use Defr\PhpMimeType\MimeType;
 
 /**
  * Class MimeTypeTest
@@ -30,7 +30,16 @@ class MimeTypeTest extends PHPUnit_Framework_TestCase
 
     public function testMimeTypesFromSplFileObject()
     {
-        // self test (MimeTypeTest.php)
         $this->assertEquals('text/html', MimeType::get(new \SplFileObject(__FILE__)));
+    }
+
+    public function testMimeTypeInfo()
+    {
+        $this->assertInstanceOf('Defr\\PhpMimeType\\MimeTypeInfo', MimeType::info(new \SplFileObject(__FILE__)));
+    }
+
+    public function testMimeTypeResponse()
+    {
+        $this->assertInstanceOf('Symfony\\Component\\HttpFoundation\\Response', MimeType::response(new \SplFileObject(__FILE__)));
     }
 }

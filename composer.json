@@ -1,7 +1,7 @@
 {
   "name": "dfridrich/php-mime-type",
   "type": "library",
-  "description": "Simple PHP class for guessing file mime type based on file extension.",
+  "description": "Simple PHP class for guessing file mime type based on file extension with ability to use in Symfony project.",
   "keywords": [
     "php",
     "mimetype"
@@ -29,7 +29,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Defr\\": "src/"
+      "Defr\\PhpMimeType\\": "src/",
+      "Defr\\": "legacy/"
     }
   }
 }

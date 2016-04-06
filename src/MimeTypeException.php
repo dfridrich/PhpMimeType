@@ -1,10 +1,10 @@
 <?php
 
-namespace Defr;
+namespace Defr\PhpMimeType;
 
 /**
  * Class MimeTypeException
- * @package Defr
+ * @package Defr\PhpMimeType
  * @author Dennis Fridrich <fridrich.dennis@gmail.com>
  */
 class MimeTypeException extends \Exception

@@ -1,13 +1,13 @@
 <?php
 
-namespace Defr;
+namespace Defr\PhpMimeType;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 /**
  * Class MimeType
- * @package Defr
+ * @package Defr\PhpMimeType
  * @author Dennis Fridrich <fridrich.dennis@gmail.com>
  * @see http://www.php.net/mime_content_type
  */

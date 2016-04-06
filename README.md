@@ -22,21 +22,21 @@ $ composer require dfridrich/php-mime-type
 
 ``` php
 // from string, can be used on non-existing files
-echo \Defr\MimeType::get('index.php'); // outputs text/html
+echo \Defr\PhpMimeType\MimeType::get('index.php'); // outputs text/html
 
 // from SplFileInfo
-echo \Defr\MimeType::get(new \SplFileInfo('Video.avi')); // outputs text/html
+echo \Defr\PhpMimeType\MimeType::get(new \SplFileInfo('Video.avi')); // outputs text/html
 
 // from SplFileObject, outputs image/jpeg
-echo \Defr\MimeType::get(new \SplFileObject('Image.JPEG'));
+echo \Defr\PhpMimeType\MimeType::get(new \SplFileObject('Image.JPEG'));
 
 // from string
-echo \Defr\MimeType::get('someStrange.extension'); // outputs application/octet-stream
+echo \Defr\PhpMimeType\MimeType::get('someStrange.extension'); // outputs application/octet-stream
 
 // Multiple files
 $files = ['index.php', new \SplFileInfo('Video.avi'), new \SplFileObject('example.php')];
-/** @var \Defr\MimeTypeInfo[] $mimeTypes */
-$mimeTypes = \Defr\MimeType::multiple($files);
+/** @var \Defr\PhpMimeType\MimeTypeInfo[] $mimeTypes */
+$mimeTypes = \Defr\PhpMimeType\MimeType::multiple($files);
 
 foreach ($mimeTypes as $mimeType) {
     echo sprintf('File "%s" is mime type "%s"', $mimeType->getFileName(), $mimeType->getMimeType()).'<br>';
@@ -53,18 +53,24 @@ $ composer require symfony/http-foundation
 ```
 
 Just pass the file name or SPL object to response method and you will get Symfony\Component\HttpFoundation\Response object.
-Disposition is **attachment** by default, you can chage it to **inline** or use Symfony\Component\HttpFoundation\ResponseHeaderBag's
+Disposition is **attachment** by default, you can chage it to **inline** or use Symfony ResponseHeaderBag's
 constants DISPOSITION_ATTACHMENT or DISPOSITION_INLINE.
 
-
 ``` php
-// Return response to download this file as attachment
-$response = \Defr\MimeType::response(__FILE__);
+// Return response to download this file as attachment (default)
+$response = \Defr\PhpMimeType\MimeType::response(__FILE__);
 $response->send();
 
-// Or as inline file
-$response = \Defr\MimeType::response(__FILE__, \Symfony\Component\HttpFoundation\ResponseHeaderBag::DISPOSITION_INLINE);
+// Return response to download this file inline
+$response = \Defr\PhpMimeType\MimeType::response(__FILE__, \Symfony\Component\HttpFoundation\ResponseHeaderBag::DISPOSITION_INLINE);
 $response->send();
+
+// You can use FileAsResponse object too
+$response = \Defr\PhpMimeType\FileAsResponse::get(__FILE__);
+$response->send();
+
+// Or directly send it to browser
+$response = \Defr\PhpMimeType\FileAsResponse::send(__FILE__);
 ```
 
 ### More examples and documentation
