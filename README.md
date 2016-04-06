@@ -4,6 +4,8 @@
 [![Total Downloads](https://poser.pugx.org/dfridrich/php-mime-type/downloads)](https://packagist.org/packages/dfridrich/php-mime-type) 
 [![License](https://poser.pugx.org/dfridrich/php-mime-type/license)](https://packagist.org/packages/dfridrich/php-mime-type)
 
+![PhpMimeType](phpmimetype.png "PhpMimeType")
+
 Simple PHP class for guessing file mime type based on file extension.
 
 ## Install
@@ -50,6 +52,8 @@ $ composer test
 
 - [Dennis Fridrich](https://github.com/dfridrich)
 - Nick Shek
+
+Photo by [freepik.com](http://www.freepik.com)
 
 ## License
 
