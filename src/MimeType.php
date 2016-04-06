@@ -2,6 +2,9 @@
 
 namespace Defr;
 
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
+
 /**
  * Class MimeType
  * @package Defr
@@ -102,9 +105,45 @@ class MimeType
     {
         $out = [];
         foreach ($files as $file) {
-            $out[] = new MimeTypeInfo($file, self::get($file));
+            $out[] = self::info($file);
         }
 
         return $out;
+    }
+
+    /**
+     * @param $file
+     * @return MimeTypeInfo
+     */
+    public static function info($file)
+    {
+        return new MimeTypeInfo($file, self::get($file));
+    }
+
+    /**
+     * @param $file
+     * @param string $disposition
+     * @return Response
+     * @throws MimeTypeException
+     */
+    public static function response($file, $disposition = ResponseHeaderBag::DISPOSITION_ATTACHMENT)
+    {
+        if (!class_exists('Symfony\\Component\\HttpFoundation\\Response')) {
+            throw new MimeTypeException('HttpFoundation component not found, install it.');
+        }
+
+        $info = self::info($file);
+        $spl = $info->getSplFileObject();
+
+        $response = new Response($spl->fread($spl->getSize()));
+
+        $response->headers->set('Content-Type', $info->getMimeType());
+        $disposition = $response->headers->makeDisposition(
+            $disposition,
+            $spl->getFileName()
+        );
+        $response->headers->set('Content-Disposition', $disposition);
+
+        return $response;
     }
 }

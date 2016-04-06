@@ -65,6 +65,24 @@ class MimeTypeInfo
     }
 
     /**
+     * @return null|\SplFileInfo|\SplFileObject|string
+     */
+    public function getSplFileObject()
+    {
+        if ($this->file instanceof \SplFileObject) {
+            return $this->file;
+        }
+        if ($this->file instanceof \SplFileInfo) {
+            return $this->file->openFile();
+        }
+        if (is_string($this->file) && is_file($this->file)) {
+            return new \SplFileObject($this->file);
+        }
+
+        return null;
+    }
+
+    /**
      * @return string
      */
     public function getMimeType()

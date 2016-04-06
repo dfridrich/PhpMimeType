@@ -18,6 +18,8 @@ $ composer require dfridrich/php-mime-type
 
 ## Usage
 
+### Basic usage
+
 ``` php
 // from string, can be used on non-existing files
 echo \Defr\MimeType::get('index.php'); // outputs text/html
@@ -41,6 +43,28 @@ foreach ($mimeTypes as $mimeType) {
 }
 
 ```
+
+### Symfony response
+
+If you want to use Symfony response feature, install HTTP Foundation package too.
+
+``` sh
+$ composer require symfony/http-foundation
+```
+
+Example usage:
+
+``` php
+// Return response to download this file as attachment
+$response = \Defr\MimeType::response(__FILE__);
+$response->send();
+
+// Or as inline file
+$response = \Defr\MimeType::response(__FILE__, \Symfony\Component\HttpFoundation\ResponseHeaderBag::DISPOSITION_INLINE);
+$response->send();
+```
+
+### More examples and documentation
 
 See [more examples](examples/).
 

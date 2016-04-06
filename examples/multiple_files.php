@@ -1,7 +1,6 @@
 <?php
 
 require "../vendor/autoload.php";
-//require 'lib/MimeType.php';
 
 echo "<h1>PhpMimeType</h1>";
 
