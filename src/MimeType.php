@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\ResponseHeaderBag;
  * Class MimeType
  * @package Defr\PhpMimeType
  * @author Dennis Fridrich <fridrich.dennis@gmail.com>
- * @see http://www.php.net/mime_content_type
+ * @see http://php.net/manual/en/function.mime-content-type.php#87856
  */
 class MimeType
 {

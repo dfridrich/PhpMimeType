@@ -8,7 +8,7 @@ use \Defr\PhpMimeType\MimeType as MimeTypeV2;
  * Class MimeType
  * @package Defr
  * @author Dennis Fridrich <fridrich.dennis@gmail.com>
- * @see http://www.php.net/mime_content_type
+ * @see http://php.net/manual/en/function.mime-content-type.php#87856
  * @deprecated Use Defr\PhpMimeType\MimeType instead
  */
 class MimeType
