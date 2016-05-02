@@ -1,4 +1,4 @@
-# PhpMimeType 
+# PhpMimeType v2
 
 [![Join the chat at https://gitter.im/dfridrich/PhpMimeType](https://badges.gitter.im/dfridrich/PhpMimeType.svg)](https://gitter.im/dfridrich/PhpMimeType?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/dfridrich/PhpMimeType.svg)](https://travis-ci.org/dfridrich/PhpMimeType)
@@ -17,14 +17,10 @@ Simple PHP class for guessing file mime type based on file extension with abilit
 Via Composer
 
 ``` sh
-$ composer require dfridrich/php-mime-type
+$ composer require "dfridrich/php-mime-type:^2"
 ```
 
-You can use v2.0.0 alpha release
-
-``` sh
-$ composer require "dfridrich/php-mime-type:v2.0.0-alpha"
-```
+Old version can be found [here](https://github.com/dfridrich/PhpMimeType/tree/v1.0.1).
 
 ## Usage
 
