@@ -49,7 +49,7 @@ class MimeTypeInfo
      */
     public function getFileName()
     {
-        if ($this->file instanceof \SplFileInfo or $this->file instanceof \SplFileObject) {
+        if ($this->file instanceof \SplFileInfo || $this->file instanceof \SplFileObject) {
             return $this->file->getFilename();
         } else {
             return $this->file;
