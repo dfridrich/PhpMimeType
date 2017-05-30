@@ -47,9 +47,17 @@ class MimeType
         'msi' => 'application/x-msdownload',
         'cab' => 'application/vnd.ms-cab-compressed',
         // Audio/video
+        'mpg' => 'audio/mpeg',
+        'mp2' => 'audio/mpeg',
         'mp3' => 'audio/mpeg',
+        'mp4' => 'audio/mp4',
         'qt' => 'video/quicktime',
         'mov' => 'video/quicktime',
+        'ogg' => 'audio/ogg',
+        'oga' => 'audio/ogg',
+        'wav' => 'audio/wav',
+        'webm' => 'audio/webm',
+        'aac' => 'audio/aac',
         // Adobe
         'pdf' => 'application/pdf',
         'psd' => 'image/vnd.adobe.photoshop',
