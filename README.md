@@ -98,6 +98,7 @@ $ composer test
 * [Dennis Fridrich](https://github.com/dfridrich)
 * Nick Shek
 * [Giso Stallenberg](https://github.com/gisostallenberg)
+* [sml-joyo](https://github.com/sml-joyo)
 
 ### Thanks to...
 
