@@ -14,13 +14,9 @@ Simple PHP class for guessing file mime type based on file extension with abilit
 
 ## Install
 
-Via Composer
-
 ``` sh
-$ composer require "dfridrich/php-mime-type:^2"
+composer require "dfridrich/php-mime-type:^2"
 ```
-
-Old version can be found [here](https://github.com/dfridrich/PhpMimeType/tree/v1.0.1).
 
 ## Usage
 
@@ -55,7 +51,7 @@ foreach ($mimeTypes as $mimeType) {
 If you want to use Symfony response feature, install HTTP Foundation package too.
 
 ``` sh
-$ composer require symfony/http-foundation
+composer require symfony/http-foundation
 ```
 
 Just pass the file name or SPL object to response method and you will get Symfony\Component\HttpFoundation\Response object.
@@ -88,7 +84,7 @@ API documentation can be found [here](http://dfridrich.github.io/PhpMimeType/).
 ## Testing
 
 ``` bash
-$ composer test
+composer test
 ```
 
 ## Credits
