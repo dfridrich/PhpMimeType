@@ -1,12 +1,21 @@
 <?php
 
+/*
+ * This file is part of the library "PhpMimeType".
+ *
+ * (c) Dennis Fridrich <fridrich.dennis@gmail.com>
+ *
+ * For the full copyright and license information,
+ * please view LICENSE.
+ */
+
 namespace Defr\PhpMimeType;
 
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 /**
- * Class FileAsResponse
- * @package Defr\PhpMimeType
+ * Class FileAsResponse.
+ *
  * @author Dennis Fridrich <fridrich.dennis@gmail.com>
  */
 class FileAsResponse
@@ -14,9 +23,11 @@ class FileAsResponse
     /**
      * @param $file
      * @param string $disposition
-     * @param null $fileName
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @param null   $fileName
+     *
      * @throws MimeTypeException
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public static function get($file, $disposition = ResponseHeaderBag::DISPOSITION_ATTACHMENT, $fileName = null)
     {
@@ -26,9 +37,11 @@ class FileAsResponse
     /**
      * @param $file
      * @param string $disposition
-     * @param null $fileName
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @param null   $fileName
+     *
      * @throws MimeTypeException
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public static function send($file, $disposition = ResponseHeaderBag::DISPOSITION_ATTACHMENT, $fileName = null)
     {

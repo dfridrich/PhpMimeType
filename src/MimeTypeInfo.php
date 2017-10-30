@@ -1,16 +1,25 @@
 <?php
 
+/*
+ * This file is part of the library "PhpMimeType".
+ *
+ * (c) Dennis Fridrich <fridrich.dennis@gmail.com>
+ *
+ * For the full copyright and license information,
+ * please view LICENSE.
+ */
+
 namespace Defr\PhpMimeType;
 
 /**
- * Class MimeTypeInfo
- * @package Defr\PhpMimeType
+ * Class MimeTypeInfo.
+ *
  * @author Dennis Fridrich <fridrich.dennis@gmail.com>
  */
 class MimeTypeInfo
 {
     /**
-     * @var string|\SplFileInfo|\SplFileObject $file
+     * @var string|\SplFileInfo|\SplFileObject
      */
     protected $file;
 
@@ -21,13 +30,15 @@ class MimeTypeInfo
 
     /**
      * MimeTypeInfo constructor.
+     *
      * @param \SplFileInfo|\SplFileObject|string $file
-     * @param string $mimeType
+     * @param string                             $mimeType
+     *
      * @throws MimeTypeException
      */
     public function __construct($file, $mimeType)
     {
-        if ((is_object($file) && !in_array(get_class($file), ['SplFileInfo', 'SplFileObject'])) && is_string($file)) {
+        if ((is_object($file) && !in_array(get_class($file), ['SplFileInfo', 'SplFileObject'], true)) && is_string($file)) {
             throw new MimeTypeException(
                 sprintf('Object %s can not be passed to %s', is_object($file) ? get_class($file) : $file, __CLASS__)
             );
@@ -51,9 +62,9 @@ class MimeTypeInfo
     {
         if ($this->file instanceof \SplFileInfo || $this->file instanceof \SplFileObject) {
             return $this->file->getFilename();
-        } else {
-            return $this->file;
         }
+
+        return $this->file;
     }
 
     /**

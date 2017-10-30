@@ -1,10 +1,19 @@
 <?php
 
-require "../vendor/autoload.php";
+/*
+ * This file is part of the library "PhpMimeType".
+ *
+ * (c) Dennis Fridrich <fridrich.dennis@gmail.com>
+ *
+ * For the full copyright and license information,
+ * please view LICENSE.
+ */
 
-echo "<h1>PhpMimeType</h1>";
+require '../vendor/autoload.php';
 
-echo "<h2>Multiple files</h2>";
+echo '<h1>PhpMimeType</h1>';
+
+echo '<h2>Multiple files</h2>';
 
 // Multiple files
 $files = ['index.php', new \SplFileInfo('Video.avi'), new \SplFileObject('example.php')];

@@ -1,19 +1,28 @@
 <?php
 
+/*
+ * This file is part of the library "PhpMimeType".
+ *
+ * (c) Dennis Fridrich <fridrich.dennis@gmail.com>
+ *
+ * For the full copyright and license information,
+ * please view LICENSE.
+ */
+
 namespace Defr\PhpMimeType;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 /**
- * Class MimeType
- * @package Defr\PhpMimeType
+ * Class MimeType.
+ *
  * @author Dennis Fridrich <fridrich.dennis@gmail.com>
+ *
  * @see http://php.net/manual/en/function.mime-content-type.php#87856
  */
 class MimeType
 {
-
     /**
      * @var array
      */
@@ -78,8 +87,10 @@ class MimeType
 
     /**
      * @param string|\SplFileInfo|\SplFileObject $file
-     * @return mixed|string
+     *
      * @throws MimeTypeException
+     *
+     * @return mixed|string
      */
     public static function get($file)
     {
@@ -87,8 +98,8 @@ class MimeType
             $file = new \SplFileInfo($file);
         }
 
-        $extension = strtolower($file->getExtension());
-        if ($extension === '') {
+        $extension = mb_strtolower($file->getExtension());
+        if ('' === $extension) {
             return static::MIME_TYPE_IF_UNKNOWN;
         }
 
@@ -111,6 +122,7 @@ class MimeType
 
     /**
      * @param array $files
+     *
      * @return array|MimeTypeInfo[]
      */
     public static function multiple(array $files)
@@ -125,6 +137,7 @@ class MimeType
 
     /**
      * @param $file
+     *
      * @return MimeTypeInfo
      */
     public static function info($file)
@@ -135,9 +148,11 @@ class MimeType
     /**
      * @param $file
      * @param string $disposition
-     * @param null $fileName
-     * @return Response
+     * @param null   $fileName
+     *
      * @throws MimeTypeException
+     *
+     * @return Response
      */
     public static function response($file, $disposition = ResponseHeaderBag::DISPOSITION_ATTACHMENT, $fileName = null)
     {
@@ -147,7 +162,7 @@ class MimeType
 
         if (!in_array(
             $disposition,
-            [ResponseHeaderBag::DISPOSITION_INLINE, ResponseHeaderBag::DISPOSITION_ATTACHMENT]
+            [ResponseHeaderBag::DISPOSITION_INLINE, ResponseHeaderBag::DISPOSITION_ATTACHMENT], true
         )
         ) {
             $disposition = ResponseHeaderBag::DISPOSITION_ATTACHMENT;
@@ -161,7 +176,7 @@ class MimeType
         $response->headers->set('Content-Type', $info->getMimeType());
         $disposition = $response->headers->makeDisposition(
             $disposition,
-            $fileName === null ? $spl->getFileName() : $fileName
+            null === $fileName ? $spl->getFileName() : $fileName
         );
         $response->headers->set('Content-Disposition', $disposition);
 
