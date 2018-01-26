@@ -226,7 +226,7 @@ class MimeType
         $fileMimeType = self::get($file);
         $foundIcon = 'fa-file-o';
         foreach (self::$fa as $mimeType => $icon) {
-            if (0 === mb_strpos($mimeType, $fileMimeType)) {
+            if (0 === mb_strpos($fileMimeType, $mimeType)) {
                 $foundIcon = $icon;
             }
         }
