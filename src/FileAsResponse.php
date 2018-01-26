@@ -13,11 +13,6 @@ namespace Defr\PhpMimeType;
 
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
-/**
- * Class FileAsResponse.
- *
- * @author Dennis Fridrich <fridrich.dennis@gmail.com>
- */
 class FileAsResponse
 {
     /**

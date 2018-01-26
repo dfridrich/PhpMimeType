@@ -11,11 +11,6 @@
 
 namespace Defr\PhpMimeType;
 
-/**
- * Class MimeTypeException.
- *
- * @author Dennis Fridrich <fridrich.dennis@gmail.com>
- */
 class MimeTypeException extends \Exception
 {
 }

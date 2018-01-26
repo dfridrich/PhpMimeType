@@ -22,7 +22,9 @@ composer require "dfridrich/php-mime-type:^2"
 
 ### Basic usage
 
-``` php
+```php
+<?php
+
 // from string, can be used on non-existing files
 echo \Defr\PhpMimeType\MimeType::get('index.php'); // outputs text/html
 
@@ -44,6 +46,11 @@ foreach ($mimeTypes as $mimeType) {
     echo sprintf('File "%s" is mime type "%s"', $mimeType->getFileName(), $mimeType->getMimeType()).'<br>';
 }
 
+// Guess FontAwesome icon
+echo \Defr\PhpMimeType\MimeType::getFontAwesomeIcon('test.pdf'); // fa fa-file-pdf-o
+// ...with fixed width icon
+echo \Defr\PhpMimeType\MimeType::getFontAwesomeIcon('test.pdf', true); // fa fa-file-pdf-o fa-fw
+
 ```
 
 ### Symfony response
@@ -58,7 +65,9 @@ Just pass the file name or SPL object to response method and you will get Symfon
 Disposition is **attachment** by default, you can chage it to **inline** or use Symfony ResponseHeaderBag's
 constants DISPOSITION_ATTACHMENT or DISPOSITION_INLINE.
 
-``` php
+```php
+<?php
+
 // Return response to download this file as attachment (default)
 $response = \Defr\PhpMimeType\MimeType::response(__FILE__);
 $response->send();
@@ -100,6 +109,7 @@ composer test
 
 * [freepik.com](http://www.freepik.com) - it provided photo in logo
 * [svogal](http://php.net/manual/en/function.mime-content-type.php#87856) - this guy inspired me to create this library
+* [colemanw](https://gist.github.com/colemanw/9c9a12aae16a4bfe2678de86b661d922) - his gist inspired me to add FontAwesome support
 
 ## License
 

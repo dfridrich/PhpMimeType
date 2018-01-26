@@ -11,11 +11,6 @@
 
 use Defr\PhpMimeType\FileAsResponse;
 
-/**
- * Class FileAsResponseTest.
- *
- * @author Dennis Fridrich <fridrich.dennis@gmail.com>
- */
 class FileAsResponseTest extends PHPUnit_Framework_TestCase
 {
     public function testGet()

@@ -15,10 +15,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 /**
- * Class MimeType.
- *
- * @author Dennis Fridrich <fridrich.dennis@gmail.com>
- *
  * @see http://php.net/manual/en/function.mime-content-type.php#87856
  */
 class MimeType
@@ -27,60 +23,91 @@ class MimeType
      * @var array
      */
     public static $mimeTypes = [
-        'txt' => 'text/plain',
-        'htm' => 'text/html',
+        'txt'  => 'text/plain',
+        'htm'  => 'text/html',
         'html' => 'text/html',
-        'php' => 'text/html',
-        'css' => 'text/css',
-        'js' => 'application/javascript',
+        'php'  => 'text/html',
+        'css'  => 'text/css',
+        'js'   => 'application/javascript',
         'json' => 'application/json',
-        'xml' => 'application/xml',
-        'swf' => 'application/x-shockwave-flash',
-        'flv' => 'video/x-flv',
+        'xml'  => 'application/xml',
+        'swf'  => 'application/x-shockwave-flash',
+        'flv'  => 'video/x-flv',
         // Images
-        'png' => 'image/png',
-        'jpe' => 'image/jpeg',
+        'png'  => 'image/png',
+        'jpe'  => 'image/jpeg',
         'jpeg' => 'image/jpeg',
-        'jpg' => 'image/jpeg',
-        'gif' => 'image/gif',
-        'bmp' => 'image/bmp',
-        'ico' => 'image/vnd.microsoft.icon',
+        'jpg'  => 'image/jpeg',
+        'gif'  => 'image/gif',
+        'bmp'  => 'image/bmp',
+        'ico'  => 'image/vnd.microsoft.icon',
         'tiff' => 'image/tiff',
-        'tif' => 'image/tiff',
-        'svg' => 'image/svg+xml',
+        'tif'  => 'image/tiff',
+        'svg'  => 'image/svg+xml',
         'svgz' => 'image/svg+xml',
         // Archives
-        'zip' => 'application/zip',
-        'rar' => 'application/x-rar-compressed',
-        'exe' => 'application/x-msdownload',
-        'msi' => 'application/x-msdownload',
-        'cab' => 'application/vnd.ms-cab-compressed',
+        'zip'  => 'application/zip',
+        'rar'  => 'application/x-rar-compressed',
+        'exe'  => 'application/x-msdownload',
+        'msi'  => 'application/x-msdownload',
+        'cab'  => 'application/vnd.ms-cab-compressed',
         // Audio/video
-        'mpg' => 'audio/mpeg',
-        'mp2' => 'audio/mpeg',
-        'mp3' => 'audio/mpeg',
-        'mp4' => 'audio/mp4',
-        'qt' => 'video/quicktime',
-        'mov' => 'video/quicktime',
-        'ogg' => 'audio/ogg',
-        'oga' => 'audio/ogg',
-        'wav' => 'audio/wav',
+        'mpg'  => 'audio/mpeg',
+        'mp2'  => 'audio/mpeg',
+        'mp3'  => 'audio/mpeg',
+        'mp4'  => 'audio/mp4',
+        'qt'   => 'video/quicktime',
+        'mov'  => 'video/quicktime',
+        'ogg'  => 'audio/ogg',
+        'oga'  => 'audio/ogg',
+        'wav'  => 'audio/wav',
         'webm' => 'audio/webm',
-        'aac' => 'audio/aac',
+        'aac'  => 'audio/aac',
         // Adobe
-        'pdf' => 'application/pdf',
-        'psd' => 'image/vnd.adobe.photoshop',
-        'ai' => 'application/postscript',
-        'eps' => 'application/postscript',
-        'ps' => 'application/postscript',
+        'pdf'  => 'application/pdf',
+        'psd'  => 'image/vnd.adobe.photoshop',
+        'ai'   => 'application/postscript',
+        'eps'  => 'application/postscript',
+        'ps'   => 'application/postscript',
         // MS Office
-        'doc' => 'application/msword',
-        'rtf' => 'application/rtf',
-        'xls' => 'application/vnd.ms-excel',
-        'ppt' => 'application/vnd.ms-powerpoint',
+        'doc'  => 'application/msword',
+        'rtf'  => 'application/rtf',
+        'xls'  => 'application/vnd.ms-excel',
+        'ppt'  => 'application/vnd.ms-powerpoint',
         // Open Office
-        'odt' => 'application/vnd.oasis.opendocument.text',
-        'ods' => 'application/vnd.oasis.opendocument.spreadsheet',
+        'odt'  => 'application/vnd.oasis.opendocument.text',
+        'ods'  => 'application/vnd.oasis.opendocument.spreadsheet',
+    ];
+
+    /**
+     * @var array
+     */
+    public static $fa = [
+        // Media
+        'image'                                                          => 'fa-file-image-o',
+        'audio'                                                          => 'fa-file-audio-o',
+        'video'                                                          => 'fa-file-video-o',
+        // Documents
+        'application/pdf'                                                => 'fa-file-pdf-o',
+        'application/msword'                                             => 'fa-file-word-o',
+        'application/vnd.ms-word'                                        => 'fa-file-word-o',
+        'application/vnd.oasis.opendocument.text'                        => 'fa-file-word-o',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml' => 'fa-file-word-o',
+        'application/vnd.ms-excel'                                       => 'fa-file-excel-o',
+        'application/vnd.openxmlformats-officedocument.spreadsheetml'    => 'fa-file-excel-o',
+        'application/application/vnd.oasis.opendocument.text'            => 'fa-file-excel-o',
+        'application/application/vnd.oasis.opendocument.spreadsheet'     => 'fa-file-excel-o',
+        'application/vnd.oasis.opendocument.spreadsheet'                 => 'fa-file-excel-o',
+        'application/vnd.ms-powerpoint'                                  => 'fa-file-powerpoint-o',
+        'application/vnd.openxmlformats-officedocument.presentationml'   => 'fa-file-powerpoint-o',
+        'application/vnd.oasis.opendocument.presentation'                => 'fa-file-powerpoint-o',
+        // Other
+        'text/plain'                                                     => 'fa-file-text-o',
+        'text/html'                                                      => 'fa-file-code-o',
+        'application/json'                                               => 'fa-file-code-o',
+        // Archives
+        'application/gzip'                                               => 'fa-file-archive-o',
+        'application/zip'                                                => 'fa-file-archive-o',
     ];
 
     const MIME_TYPE_IF_UNKNOWN = 'application/octet-stream';
@@ -88,12 +115,11 @@ class MimeType
     /**
      * @param string|\SplFileInfo|\SplFileObject $file
      *
-     * @throws MimeTypeException
-     *
      * @return mixed|string
      */
-    public static function get($file)
-    {
+    public static function get(
+        $file
+    ) {
         if (is_string($file)) {
             $file = new \SplFileInfo($file);
         }
@@ -123,10 +149,13 @@ class MimeType
     /**
      * @param array $files
      *
+     * @throws MimeTypeException
+     *
      * @return array|MimeTypeInfo[]
      */
-    public static function multiple(array $files)
-    {
+    public static function multiple(
+        array $files
+    ) {
         $out = [];
         foreach ($files as $file) {
             $out[] = static::info($file);
@@ -138,31 +167,39 @@ class MimeType
     /**
      * @param $file
      *
+     * @throws MimeTypeException
+     *
      * @return MimeTypeInfo
      */
-    public static function info($file)
-    {
+    public static function info(
+        $file
+    ) {
         return new MimeTypeInfo($file, static::get($file));
     }
 
     /**
      * @param $file
      * @param string $disposition
-     * @param null   $fileName
+     * @param null $fileName
      *
      * @throws MimeTypeException
      *
      * @return Response
      */
-    public static function response($file, $disposition = ResponseHeaderBag::DISPOSITION_ATTACHMENT, $fileName = null)
-    {
+    public static function response(
+        $file,
+        $disposition = ResponseHeaderBag::DISPOSITION_ATTACHMENT,
+        $fileName = null
+    ) {
         if (!class_exists('Symfony\\Component\\HttpFoundation\\Response')) {
             throw new MimeTypeException('HttpFoundation component not found, install it.');
         }
 
-        if (!in_array(
+        if (
+        !in_array(
             $disposition,
-            [ResponseHeaderBag::DISPOSITION_INLINE, ResponseHeaderBag::DISPOSITION_ATTACHMENT], true
+            [ResponseHeaderBag::DISPOSITION_INLINE, ResponseHeaderBag::DISPOSITION_ATTACHMENT],
+            true
         )
         ) {
             $disposition = ResponseHeaderBag::DISPOSITION_ATTACHMENT;
@@ -181,5 +218,18 @@ class MimeType
         $response->headers->set('Content-Disposition', $disposition);
 
         return $response;
+    }
+
+    public static function getFontAwesomeIcon($file, $fixedWidth = false)
+    {
+        $fileMimeType = self::get($file);
+        $foundIcon = 'fa-file-o';
+        foreach (self::$fa as $mimeType => $icon) {
+            if (0 === mb_strpos($mimeType, $fileMimeType)) {
+                $foundIcon = $icon;
+            }
+        }
+
+        return 'fa '.$foundIcon.($fixedWidth ? ' fa-fw' : null);
     }
 }

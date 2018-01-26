@@ -11,11 +11,6 @@
 
 use Defr\PhpMimeType\MimeType;
 
-/**
- * Class MimeTypeTest.
- *
- * @author Dennis Fridrich <fridrich.dennis@gmail.com>
- */
 class MimeTypeTest extends PHPUnit_Framework_TestCase
 {
     public function testMimeTypesFromFileName()
@@ -63,5 +58,12 @@ class MimeTypeTest extends PHPUnit_Framework_TestCase
             $randomFileName,
             (string) MimeType::response(new \SplFileObject(__FILE__), null, "$randomFileName")
         );
+    }
+
+    public function testFontAwesome()
+    {
+        $this->assertSame('fa fa-file-pdf-o', MimeType::getFontAwesomeIcon('test.pdf'));
+        $this->assertSame('fa fa-file-pdf-o fa-fw', MimeType::getFontAwesomeIcon('test.pdf', true));
+        $this->assertSame('fa fa-file-o', MimeType::getFontAwesomeIcon('test.weirdextension'));
     }
 }

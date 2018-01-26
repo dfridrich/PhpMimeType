@@ -21,10 +21,14 @@
 ### Security
 - Nothing
 
-## v1.0.1
+### v2.0.3
 
-Now using Semver versioning (thanks to @gisostallenberg).
+- Added FontAwesome support
 
 ## v1.0
 
-Initial version.
+- Initial version.
+
+### v1.0.1
+
+- Now using Semver versioning (thanks to @gisostallenberg).

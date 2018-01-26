@@ -11,11 +11,6 @@
 
 namespace Defr\PhpMimeType;
 
-/**
- * Class MimeTypeInfo.
- *
- * @author Dennis Fridrich <fridrich.dennis@gmail.com>
- */
 class MimeTypeInfo
 {
     /**
