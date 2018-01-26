@@ -24,6 +24,7 @@ class MimeType
      */
     public static $mimeTypes = [
         'txt'  => 'text/plain',
+        'csv'  => 'text/csv',
         'htm'  => 'text/html',
         'html' => 'text/html',
         'php'  => 'text/html',
@@ -71,11 +72,34 @@ class MimeType
         'ps'   => 'application/postscript',
         // MS Office
         'doc'  => 'application/msword',
+        'dot'  => 'application/msword',
+        'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'dotx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.template',
+        'docm' => 'application/vnd.ms-word.document.macroEnabled.12',
+        'dotm' => 'application/vnd.ms-word.template.macroEnabled.12',
+        'odt'  => 'application/vnd.oasis.opendocument.text',
         'rtf'  => 'application/rtf',
         'xls'  => 'application/vnd.ms-excel',
+        'xlt'  => 'application/vnd.ms-excel',
+        'xla'  => 'application/vnd.ms-excel',
+        'xlsx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'xltx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.template',
+        'xlsm' => 'application/vnd.ms-excel.sheet.macroEnabled.12',
+        'xltm' => 'application/vnd.ms-excel.template.macroEnabled.12',
+        'xlam' => 'application/vnd.ms-excel.addin.macroEnabled.12',
+        'xlsb' => 'application/vnd.ms-excel.sheet.binary.macroEnabled.12',
         'ppt'  => 'application/vnd.ms-powerpoint',
-        // Open Office
-        'odt'  => 'application/vnd.oasis.opendocument.text',
+        'pot'  => 'application/vnd.ms-powerpoint',
+        'pps'  => 'application/vnd.ms-powerpoint',
+        'ppa'  => 'application/vnd.ms-powerpoint',
+        'pptx' => 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+        'potx' => 'application/vnd.openxmlformats-officedocument.presentationml.template',
+        'ppsx' => 'application/vnd.openxmlformats-officedocument.presentationml.slideshow',
+        'ppam' => 'application/vnd.ms-powerpoint.addin.macroEnabled.12',
+        'pptm' => 'application/vnd.ms-powerpoint.presentation.macroEnabled.12',
+        'potm' => 'application/vnd.ms-powerpoint.template.macroEnabled.12',
+        'ppsm' => 'application/vnd.ms-powerpoint.slideshow.macroEnabled.12',
+        'mdb'  => 'application/vnd.ms-access',
         'ods'  => 'application/vnd.oasis.opendocument.spreadsheet',
     ];
 
@@ -89,16 +113,16 @@ class MimeType
         'video'                                                          => 'fa-file-video-o',
         // Documents
         'application/pdf'                                                => 'fa-file-pdf-o',
+        'pdf'                                                            => 'fa-file-pdf-o',
         'application/msword'                                             => 'fa-file-word-o',
         'application/vnd.ms-word'                                        => 'fa-file-word-o',
         'application/vnd.oasis.opendocument.text'                        => 'fa-file-word-o',
         'application/vnd.openxmlformats-officedocument.wordprocessingml' => 'fa-file-word-o',
         'application/vnd.ms-excel'                                       => 'fa-file-excel-o',
         'application/vnd.openxmlformats-officedocument.spreadsheetml'    => 'fa-file-excel-o',
-        'application/application/vnd.oasis.opendocument.text'            => 'fa-file-excel-o',
         'application/application/vnd.oasis.opendocument.spreadsheet'     => 'fa-file-excel-o',
         'application/vnd.oasis.opendocument.spreadsheet'                 => 'fa-file-excel-o',
-        'application/octet-stream'                                       => 'fa-file-excel-o',
+        'csv'                                                            => 'fa-file-excel-o',
         'application/vnd.ms-powerpoint'                                  => 'fa-file-powerpoint-o',
         'application/vnd.openxmlformats-officedocument.presentationml'   => 'fa-file-powerpoint-o',
         'application/vnd.oasis.opendocument.presentation'                => 'fa-file-powerpoint-o',
@@ -181,7 +205,7 @@ class MimeType
     /**
      * @param $file
      * @param string $disposition
-     * @param null $fileName
+     * @param null   $fileName
      *
      * @throws MimeTypeException
      *
@@ -224,9 +248,10 @@ class MimeType
     public static function getFontAwesomeIcon($file, $fixedWidth = false)
     {
         $fileMimeType = self::get($file);
+
         $foundIcon = 'fa-file-o';
         foreach (self::$fa as $mimeType => $icon) {
-            if (0 === mb_strpos($fileMimeType, $mimeType)) {
+            if (false !== mb_strpos($fileMimeType, $mimeType)) {
                 $foundIcon = $icon;
             }
         }

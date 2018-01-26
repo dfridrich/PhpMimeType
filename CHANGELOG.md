@@ -23,7 +23,8 @@
 
 ### v2.0.3
 
-- Added FontAwesome support
+- Added FontAwesome support.
+- Added a lot of mime types.
 
 ## v1.0
 

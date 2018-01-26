@@ -64,6 +64,22 @@ class MimeTypeTest extends PHPUnit_Framework_TestCase
     {
         $this->assertSame('fa fa-file-pdf-o', MimeType::getFontAwesomeIcon('test.pdf'));
         $this->assertSame('fa fa-file-pdf-o fa-fw', MimeType::getFontAwesomeIcon('test.pdf', true));
+
+        $this->assertSame('fa fa-file-excel-o', MimeType::getFontAwesomeIcon('test.csv'));
+        $this->assertSame('fa fa-file-excel-o', MimeType::getFontAwesomeIcon('test.xls'));
+        $this->assertSame('fa fa-file-excel-o', MimeType::getFontAwesomeIcon('test.xlsx'));
+        $this->assertSame('fa fa-file-excel-o', MimeType::getFontAwesomeIcon('test.ods'));
+
+        $this->assertSame('fa fa-file-word-o', MimeType::getFontAwesomeIcon('test.doc'));
+        $this->assertSame('fa fa-file-word-o', MimeType::getFontAwesomeIcon('test.odt'));
+        $this->assertSame('fa fa-file-word-o', MimeType::getFontAwesomeIcon('test.docx'));
+
+        $this->assertSame('fa fa-file-image-o', MimeType::getFontAwesomeIcon('test.svg'));
+        $this->assertSame('fa fa-file-image-o', MimeType::getFontAwesomeIcon('test.bmp'));
+        $this->assertSame('fa fa-file-image-o', MimeType::getFontAwesomeIcon('test.png'));
+        $this->assertSame('fa fa-file-image-o', MimeType::getFontAwesomeIcon('test.jpg'));
+        $this->assertSame('fa fa-file-image-o', MimeType::getFontAwesomeIcon('test.jpeg'));
+
         $this->assertSame('fa fa-file-o', MimeType::getFontAwesomeIcon('test.weirdextension'));
     }
 }
