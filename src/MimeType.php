@@ -98,6 +98,7 @@ class MimeType
         'application/application/vnd.oasis.opendocument.text'            => 'fa-file-excel-o',
         'application/application/vnd.oasis.opendocument.spreadsheet'     => 'fa-file-excel-o',
         'application/vnd.oasis.opendocument.spreadsheet'                 => 'fa-file-excel-o',
+        'application/octet-stream'                                       => 'fa-file-excel-o',
         'application/vnd.ms-powerpoint'                                  => 'fa-file-powerpoint-o',
         'application/vnd.openxmlformats-officedocument.presentationml'   => 'fa-file-powerpoint-o',
         'application/vnd.oasis.opendocument.presentation'                => 'fa-file-powerpoint-o',
