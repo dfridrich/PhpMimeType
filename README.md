@@ -15,7 +15,7 @@ Simple PHP class for guessing file mime type based on file extension with abilit
 ## Install
 
 ``` sh
-composer require "dfridrich/php-mime-type:^2"
+composer require dfridrich/php-mime-type
 ```
 
 ## Usage
