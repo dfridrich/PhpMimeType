@@ -6,7 +6,6 @@
 [![Total Downloads](https://poser.pugx.org/dfridrich/php-mime-type/downloads)](https://packagist.org/packages/dfridrich/php-mime-type)
 [![Monthly Downloads](https://poser.pugx.org/dfridrich/php-mime-type/d/monthly)](https://packagist.org/packages/dfridrich/php-mime-type)
 [![License](https://poser.pugx.org/dfridrich/php-mime-type/license)](https://packagist.org/packages/dfridrich/php-mime-type)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/8c39bad3-cd2f-46d0-9b81-e1d4785429a6/mini.png)](https://insight.sensiolabs.com/projects/8c39bad3-cd2f-46d0-9b81-e1d4785429a6)
 
 ![PhpMimeType](phpmimetype.png "PhpMimeType")
 
