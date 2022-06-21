@@ -1,2 +1,4 @@
-vendor/
-.git/
+/vendor/
+/.git/
+/.php-version
+/.phpunit.result.cache
