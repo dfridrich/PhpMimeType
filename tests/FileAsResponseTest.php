@@ -10,8 +10,9 @@
  */
 
 use Defr\PhpMimeType\FileAsResponse;
+use PHPUnit\Framework\TestCase;
 
-class FileAsResponseTest extends PHPUnit_Framework_TestCase
+class FileAsResponseTest extends TestCase
 {
     public function testGet()
     {

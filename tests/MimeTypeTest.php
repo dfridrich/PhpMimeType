@@ -10,8 +10,9 @@
  */
 
 use Defr\PhpMimeType\MimeType;
+use PHPUnit\Framework\TestCase;
 
-class MimeTypeTest extends PHPUnit_Framework_TestCase
+class MimeTypeTest extends TestCase
 {
     public function testMimeTypesFromFileName()
     {
@@ -54,7 +55,7 @@ class MimeTypeTest extends PHPUnit_Framework_TestCase
     public function testMimeTypeResponseWithOwnFileName()
     {
         $randomFileName = time().'.txt';
-        $this->assertContains(
+        $this->assertStringContainsString(
             $randomFileName,
             (string) MimeType::response(new \SplFileObject(__FILE__), null, "$randomFileName")
         );
