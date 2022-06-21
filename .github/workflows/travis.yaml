@@ -28,4 +28,7 @@ jobs:
           php-version: ${{ matrix.php-versions }}
           tools: phpunit
 
+      - name: Install dependencies
+        run: composer install --prefer-dist --dev
+
       - run: phpunit
