@@ -1,4 +1,4 @@
-# PhpMimeType v2
+# PhpMimeType v3
 
 [![Join the chat at https://gitter.im/dfridrich/PhpMimeType](https://badges.gitter.im/dfridrich/PhpMimeType.svg)](https://gitter.im/dfridrich/PhpMimeType?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/dfridrich/PhpMimeType.svg)](https://travis-ci.org/dfridrich/PhpMimeType)
