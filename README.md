@@ -28,7 +28,7 @@ composer require dfridrich/php-mime-type
 echo \Defr\PhpMimeType\MimeType::get('index.php'); // outputs text/html
 
 // from SplFileInfo
-echo \Defr\PhpMimeType\MimeType::get(new \SplFileInfo('Video.avi')); // outputs text/html
+echo \Defr\PhpMimeType\MimeType::get(new \SplFileInfo('Video.avi')); // outputs application/octet-stream
 
 // from SplFileObject
 echo \Defr\PhpMimeType\MimeType::get(new \SplFileObject('Image.JPEG')); // outputs image/jpeg
