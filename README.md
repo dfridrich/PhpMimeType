@@ -7,6 +7,8 @@
 [![Monthly Downloads](https://poser.pugx.org/dfridrich/php-mime-type/d/monthly)](https://packagist.org/packages/dfridrich/php-mime-type)
 [![License](https://poser.pugx.org/dfridrich/php-mime-type/license)](https://packagist.org/packages/dfridrich/php-mime-type)
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/dfridrich)
+
 ![PhpMimeType](phpmimetype.png "PhpMimeType")
 
 Simple PHP class for guessing file mime type based on file extension with ability to use in Symfony project.
