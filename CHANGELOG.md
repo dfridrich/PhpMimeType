@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.0.1
+
+- Add support only PHP >=8.1
+- Add support for Symfony 7.0
+- Drop support by older PHP versions
+
 ## v2.0.0
 
 ### Added
